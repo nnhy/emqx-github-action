@@ -1,0 +1,10 @@
+name: 'EMQ in GitHub Actions'
+description: '启动一个EMQ，用于测试'
+
+branding:
+  icon: 'database'
+  color: 'red'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
