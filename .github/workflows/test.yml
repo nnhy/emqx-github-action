@@ -4,22 +4,17 @@ on:
   push:
     branches:
       - master
+  workflow_dispatch:
 
 jobs:
   test-broker:
-    name: EMQ [${{ matrix.version }}]
+    name: Build EMQ
    
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        version: ['4.4.1', 'latest']
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Start EMQ
+      - name: Setup EMQ
         uses: ./
-        with:
-          version: ${{ matrix.version }}
